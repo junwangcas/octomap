@@ -26,4 +26,7 @@ Makefile
 # our binary files, in case someone forgets them in the source dir:
 *.bt
 *.ot
-*.graph
+*.graph.idea/
+.idea/
+cmake-build-debug/
+octovis/src/extern/QGLViewer/.qmake.stash
