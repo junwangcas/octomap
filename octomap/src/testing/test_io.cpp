@@ -18,6 +18,7 @@ int main(int argc, char** argv) {
     return 1; // exit 1 means failure
   }
 
+  // 也就是一个io
   std::cout << "Testing empty OcTree...\n";
   //empty tree
   {
@@ -173,7 +174,7 @@ int main(int argc, char** argv) {
     //EXPECT_TRUE(colorNode);
     //EXPECT_EQ(colorNode->getColor(), color_red);    
     
-    delete readStampedTree;    
+    delete readStampedTree;
   }
 
 

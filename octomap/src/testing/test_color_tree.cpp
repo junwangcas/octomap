@@ -19,6 +19,7 @@ void print_query_info(point3d query, ColorOcTreeNode* node) {
 
 int main(int /*argc*/, char** /*argv*/) {
 
+  // 带color的
   double res = 0.05;  // create empty tree with resolution 0.05 (different from default 0.1 for test)
   ColorOcTree tree (res);
   // insert some measurements of occupied cells

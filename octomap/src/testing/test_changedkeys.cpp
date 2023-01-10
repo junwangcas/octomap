@@ -54,17 +54,18 @@ void printChanges(OcTree& tree){
 
 
 int main(int /*argc*/, char** /*argv*/) {
-
-
   //##############################################################
-
+  // 生成一个5cm的tree
   OcTree tree (0.05);
+  // 这个直接是change detection？
   tree.enableChangeDetection(true);
 
   point3d origin (0.01f, 0.01f, 0.02f);
   point3d point_on_surface (4.01f,0.01f,0.01f);
+  // 沿着射线方向都更新
   tree.insertRay(origin, point_on_surface);
   printChanges(tree);
+  // 如果单独只更新这一个节点，那么就只有它自己是占用
   tree.updateNode(point3d(2.01f, 0.01f, 0.01f), 2.0f);
   printChanges(tree);
   tree.updateNode(point3d(2.01f, 0.01f, 0.01f), -2.0f);
@@ -88,6 +89,7 @@ int main(int /*argc*/, char** /*argv*/) {
 
 
   cout << "done." << endl;
+  tree.write("test_changedkeys.ot");
 
   return 0;
 }
